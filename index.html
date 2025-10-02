@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lara Mae Gereda | Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h2 class="logo">Lara Mae Gereda</h2>
+      <ul>
+        <li><a href="#about" class="active">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ <!-- About Section -->
+<section id="about" class="about-section fade-in">
+  <div class="about-container">
+
+    <!-- Profile Card -->
+    <div class="about-image-card">
+      <div class="profile-frame">
+        <img src="images/myprofile.jpg" alt="Profile Image">
+      </div>
+      <h2 class="profile-name">Lara Mae C. Gereda</h2>
+      <p class="profile-role">Computer Science Student</p>
+    </div>
+
+    <!-- Text -->
+    <div class="about-text">
+      <h1>About Me</h1>
+      <p>
+        I’m a <span class="highlight">Computer Science student</span> with a strong passion 
+        for coding, problem-solving, and technology. I enjoy exploring programming languages, 
+        developing user-friendly applications, and applying creativity in building modern solutions.
+      </p>
+      <p>
+        My long-term goal is to combine <strong>technical knowledge</strong> and 
+        <strong>innovation</strong> to create impactful projects that contribute to the ever-growing 
+        field of technology.
+      </p>
+      <a href="intro.html" class="btn secondary-btn">Back to Intro</a>
+    </div>
+
+</section>
+
+
+  <!-- Projects Section -->
+  <section id="projects" class="content fade-in">
+    <h1>Projects</h1>
+    <div class="cards">
+      <div class="card">
+        <h2>Portfolio Website</h2>
+        <p>A responsive personal portfolio built with HTML, CSS, and animations.</p>
+      </div>
+      <div class="card">
+        <h2>To-Do App</h2>
+        <p>A productivity app with categories, reminders, and priority levels.</p>
+      </div>
+     
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="content fade-in">
+    <h1>Contact Me</h1>
+    <p>Feel free to reach out to me for collaborations or opportunities!</p>
+    <div class="contact-box">
+      <p>📧 Email: <a href="mailto:lara.gereda@email.com">lara.gereda@email.com</a></p>
+      <p>📱 Phone: +63 912 345 6789</p>
+      <p>🌐 LinkedIn: <a href="#">linkedin.com/in/laragereda</a></p>
+    </div>
+  </section>
+
+  <!-- ====== MY GRADES SECTION ====== -->
+  <section id="my-grade" class="page-section">
+    <h2 class="section-title">My Grades</h2>
+
+    <div class="grades-head">
+      <input id="id-input" type="search" inputmode="numeric" pattern="[0-9]*"
+             placeholder="Enter ID Number Here)">
+      <button id="id-search" class="btn small">Search ID</button>
+    </div>
+
+    <p id="grade-status" class="grades-status">Type a student ID to see your grade.</p>
+
+    <div id="grade-result" class="grade-card" hidden>
+      <p><strong>Student ID:</strong> <span id="g-id"></span></p>
+      <p><strong>Last Name:</strong> <span id="g-ln"></span></p>
+      <p><strong>Midterm:</strong> <span id="g-mid"></span></p>
+      <p><strong>Final:</strong> <span id="g-fin"></span></p>
+    </div>
+  </section>
+
+  <!-- ====== JS for Grades (using your XML) ====== -->
+  <script>
+    const xmlData = `
+<response>
+<students>
+<student><student_id>2340054</student_id><student_lastname>ALBERIO</student_lastname><midterm_grade>2.5</midterm_grade><final_grade>2.0</final_grade></student>
+<student><student_id>2340012</student_id><student_lastname>ALMERIA</student_lastname><midterm_grade>2.5</midterm_grade><final_grade>2.0</final_grade></student>
+<student><student_id>2340108</student_id><student_lastname>BAYLOSIS</student_lastname><midterm_grade>1.5</midterm_grade><final_grade>3.0</final_grade></student>
+<student><student_id>2340222</student_id><student_lastname>COMANDA</student_lastname><midterm_grade>1.0</midterm_grade><final_grade>5.0</final_grade></student>
+<student><student_id>2340127</student_id><student_lastname>CUIMAN</student_lastname><midterm_grade>2.0</midterm_grade><final_grade>2.5</final_grade></student>
+<student><student_id>2340048</student_id><student_lastname>DELFIN</student_lastname><midterm_grade>1.0</midterm_grade><final_grade>5.0</final_grade></student>
+<student><student_id>2340144</student_id><student_lastname>GEREDA</student_lastname><midterm_grade>2.0</midterm_grade><final_grade>2.5</final_grade></student>
+<student><student_id>2340085</student_id><student_lastname>GOMERA</student_lastname><midterm_grade>3.0</midterm_grade><final_grade>1.5</final_grade></student>
+<student><student_id>2340098</student_id><student_lastname>GUIAS</student_lastname><midterm_grade>1.0</midterm_grade><final_grade>5.0</final_grade></student>
+<student><student_id>2340099</student_id><student_lastname>LACHICA</student_lastname><midterm_grade>5.0</midterm_grade><final_grade>1.0</final_grade></student>
+<student><student_id>2340058</student_id><student_lastname>PABELONIA</student_lastname><midterm_grade>5.0</midterm_grade><final_grade>1.0</final_grade></student>
+<student><student_id>2340204</student_id><student_lastname>PADILLA</student_lastname><midterm_grade>2.0</midterm_grade><final_grade>2.5</final_grade></student>
+<student><student_id>2340101</student_id><student_lastname>REIN</student_lastname><midterm_grade>1.5</midterm_grade><final_grade>3.0</final_grade></student>
+<student><student_id>2340084</student_id><student_lastname>TORREON</student_lastname><midterm_grade>1.5</midterm_grade><final_grade>3.0</final_grade></student>
+<student><student_id>2340020</student_id><student_lastname>ZASPA</student_lastname><midterm_grade>3.0</midterm_grade><final_grade>1.5</final_grade></student>
+</students>
+</response>
+    `;
+
+    const statusEl = document.getElementById('grade-status');
+    const resultEl = document.getElementById('grade-result');
+    const idEl  = document.getElementById('g-id');
+    const lnEl  = document.getElementById('g-ln');
+    const midEl = document.getElementById('g-mid');
+    const finEl = document.getElementById('g-fin');
+
+    const idInput = document.getElementById('id-input');
+    const idSearchBtn = document.getElementById('id-search');
+
+    let lastRecord = null;
+
+    idSearchBtn.addEventListener('click', handleSearch);
+    idInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') handleSearch(); });
+
+    function handleSearch() {
+      const typed = idInput.value.trim();
+      if (!typed) {
+        statusEl.textContent = 'Please enter a student ID.';
+        return;
+      }
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(xmlData, 'application/xml');
+      const students = xml.querySelectorAll('student');
+      let rec = null;
+
+      students.forEach(s => {
+        const id = s.querySelector('student_id')?.textContent.trim();
+        if (id === typed) {
+          rec = {
+            id,
+            ln: s.querySelector('student_lastname')?.textContent.trim(),
+            mid: s.querySelector('midterm_grade')?.textContent.trim(),
+            fin: s.querySelector('final_grade')?.textContent.trim()
+          };
+        }
+      });
+
+      if (!rec) {
+        statusEl.textContent = '⚠️ No record found for ID ' + typed;
+        resultEl.hidden = true;
+        return;
+      }
+
+      idEl.textContent = rec.id;
+      lnEl.textContent = rec.ln;
+      midEl.textContent = rec.mid;
+      finEl.textContent = rec.fin;
+      resultEl.hidden = false;
+      statusEl.textContent = '✅ Grade loaded for ' + typed + '!';
+    }
+  </script>
+
+  <script src="script.js"></script>
+  <!-- Interactive Animated Background -->
+<canvas id="bg-canvas"></canvas>
+</body>
+</html>
