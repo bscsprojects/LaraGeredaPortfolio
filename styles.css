@@ -560,52 +560,23 @@ html, body {
   display: block; /* force each grade on its own line */
 }
 
-#my-grade .section-title {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: #5c4033; /* brown title */
+/* === Grades Styling === */
+#midterm-grade,
+#final-grade {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #5a2d0c; /* dark brown */
 }
 
-#my-grade .grades-head {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
+#grades-output p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333; /* label text darker gray */
 }
 
-#my-grade input[type="search"] {
-  padding: 10px 15px;
-  font-size: 1rem;
-  border: 2px solid #8b5e3c; /* darker brown border */
-  border-radius: 5px;
-  outline: none;
-}
 
-#my-grade input[type="search"]:focus {
-  border-color: #5c4033; /* darker brown on focus */
-}
 
-#my-grade button {
-  padding: 10px 20px;
-  background-color: #8b5e3c; /* brown button */
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-#my-grade button:hover {
-  background-color: #5c4033; /* darker brown on hover */
-}
-
-#grade-status {
-  margin-bottom: 20px;
-  font-size: 1.1rem;
-}
 
 .grade-card {
   display: inline-block;
@@ -627,4 +598,5 @@ html, body {
 .grade-card strong {
   color: #8b5e3c; /* slightly darker brown for labels */
 }
+
 
