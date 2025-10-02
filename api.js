@@ -1,5 +1,5 @@
 // Fetch Midterm Grade using Fetch API with corsproxy.io
-fetch('https://corsproxy.io/?' + encodeURIComponent('http://class-grades-cs.mywebcommunity.org/grades_api.php?surname=rein&id_number=2340101'))
+fetch('https://corsproxy.io/?' + encodeURIComponent('http://class-grades-cs.mywebcommunity.org/grades_api.php?surname=gereda&id_number=2340144'))
 .then(response => {
     if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -15,7 +15,7 @@ fetch('https://corsproxy.io/?' + encodeURIComponent('http://class-grades-cs.mywe
     const students = xmlDoc.getElementsByTagName('student');
     for (let student of students) {
         const studentId = student.getElementsByTagName('student_id')[0]?.textContent;
-        if (studentId === '2340101') {
+        if (studentId === '2340144') {
             const midtermGrade = student.getElementsByTagName('midterm_grade')[0]?.textContent || 'N/A';
             document.getElementById('midterm-grade').textContent = "Midterm: " + midtermGrade;
             break;
@@ -29,7 +29,7 @@ fetch('https://corsproxy.io/?' + encodeURIComponent('http://class-grades-cs.mywe
 
 // Fetch Final Grade using XMLHttpRequest with corsproxy.io
 const xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://corsproxy.io/?' + encodeURIComponent('http://class-grades-cs.mywebcommunity.org/grades_api.php?surname=rein&id_number=2340101'), true);
+xhr.open('GET', 'https://corsproxy.io/?' + encodeURIComponent('http://class-grades-cs.mywebcommunity.org/grades_api.php?surname=gereda&id_number=2340144'), true);
 
 xhr.onload = function() {
     if (xhr.status === 200) {
@@ -41,7 +41,7 @@ xhr.onload = function() {
             const students = xmlDoc.getElementsByTagName('student');
             for (let student of students) {
                 const studentId = student.getElementsByTagName('student_id')[0]?.textContent;
-                if (studentId === '2340101') {
+                if (studentId === '2340144') {
                     const finalGrade = student.getElementsByTagName('final_grade')[0]?.textContent || 'N/A';
                     document.getElementById('final-grade').textContent = "Final: " + finalGrade;
                     break;
